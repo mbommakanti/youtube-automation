@@ -1,0 +1,5 @@
+logging:
+  level: "INFO"
+  handler: "console"
+  create_folder: false
+  file_path: null

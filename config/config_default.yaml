@@ -26,3 +26,10 @@ aws:
   region: "us-east-1"
   dynamodb_table: "viral-videos"
   s3_bucket: "viral-shorts-content"
+
+#Logging
+logging:
+  level: "INFO"
+  handler: "console"
+  create_folder: false
+  file_path: null
