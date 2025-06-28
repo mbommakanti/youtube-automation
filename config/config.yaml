@@ -1,0 +1,28 @@
+# System Configuration
+system:
+  name: "viral-shorts-automation"
+  version: "1.0.0"
+  platform: "windows"
+  
+# Scheduler settings
+scheduler:
+  frequency_hours: 6
+  timezone: "UTC"
+  
+# File paths (Windows style)
+paths:
+  logs: "logs\\"
+  temp: "temp\\"
+  output: "output\\"
+  
+# YouTube settings
+youtube:
+  max_videos_to_analyze: 50
+  min_views_threshold: 1000000
+  max_video_age_hours: 24
+  
+# AWS settings
+aws:
+  region: "us-east-1"
+  dynamodb_table: "viral-videos"
+  s3_bucket: "viral-shorts-content"
