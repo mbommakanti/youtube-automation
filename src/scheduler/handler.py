@@ -4,12 +4,12 @@ import os
 from datetime import datetime
 import boto3
 
-# Configure logging for Windows
+# Configure logging for Windows with UTF-8 encoding
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs\\scheduler.log'),
+        logging.FileHandler('logs\\scheduler.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     """Main scheduler handler for Windows development"""
     
     try:
-        logger.info("🚀 Viral Shorts Pipeline Started (Windows)")
+        logger.info("VIRAL SHORTS PIPELINE STARTED (Windows)")
         logger.info(f"Triggered at: {datetime.now().isoformat()}")
         logger.info(f"Event: {json.dumps(event, indent=2)}")
         
@@ -29,9 +29,9 @@ def lambda_handler(event, context):
         # Test AWS connection
         try:
             events_client = boto3.client('events')
-            logger.info("✅ AWS connection successful")
+            logger.info("SUCCESS: AWS connection successful")
         except Exception as aws_error:
-            logger.error(f"❌ AWS connection failed: {aws_error}")
+            logger.error(f"ERROR: AWS connection failed: {aws_error}")
             raise
         
         pipeline_status = {
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
             'message': 'Scheduler running successfully on Windows'
         }
         
-        logger.info("✅ Pipeline completed successfully")
+        logger.info("SUCCESS: Pipeline completed successfully")
         
         return {
             'statusCode': 200,
@@ -49,7 +49,7 @@ def lambda_handler(event, context):
         }
         
     except Exception as e:
-        logger.error(f"❌ Pipeline failed: {str(e)}")
+        logger.error(f"ERROR: Pipeline failed: {str(e)}")
         return {
             'statusCode': 500,
             'body': json.dumps({
