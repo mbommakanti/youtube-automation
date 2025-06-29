@@ -33,3 +33,7 @@ logging:
   handler: "console"
   create_folder: false
   file_path: null
+
+pipeline:
+  max_retries: 3
+  batch_size: 10
