@@ -3,3 +3,6 @@ logging:
   handler: "file"
   create_folder: true
   file_path: "logs/scheduler.log"
+
+youtube:
+  apiKey: "AIzaSyAZdg-SWkSHmpQJRqR-H_OTzwCdTFw_NnE"
